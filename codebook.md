@@ -1,7 +1,7 @@
 
 The script has five sections, corrosponding to five steps in the problem statement
 
-First step is to download and unzip files. Script checks if the file is present, if not then downloads one otherwise unzips the one in the folder.
+First step is to download and unzip files. Script checks if the file is present, if not then downloads it, otherwise unzips the one in the folder.
 
 STEP 1: Merge the training and the test sets to create one data set
 For this, a folder named 'Combined Data_Nitish' with a subfolder 'Inertial Signals' is created in the working directory. A For loop is used to cycle through the data sets within 'Inertial Signals' folder of both the test and train data sets.
