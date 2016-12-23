@@ -11,19 +11,20 @@ rbind(f1,f2) is used to combine the two files of the same measurement and saved 
 Consequently, subject_test & subject_train, X_test and X_train, and y_test and y_train are imported and combined using rbind function. The merged data frames are stored in the 'Combined Data_Nitish' folder.
  
 The file names are transformed as follows :
-body_acc_x_test/train.txt-     body_acc_x.txt
-body_acc_y_test/train.txt-     body_acc_y.txt
-body_acc_z_test/train.txt-     body_acc_z.txt
-body_gyro_x_test/train.txt-    body_gyro_x.txt
-body_gyro_y_test/train.txt-    body_gyro_y.txt
-body_gyro_z_test/train.txt-    body_gyro_z.txt
-total_acc_x_test/train.txt-    total_acc_x.txt
-total_acc_y_test/train.txt-     total_acc_y.txt
-total_acc_z_test/train.txt-     total_acc_z.txt
 
-subject_test/train.txt-     subject.txt
-X_test/train.txt-     X.txt
-y_test/train.txt-     y.txt
+        body_acc_x_test/train.txt-     body_acc_x.txt
+        body_acc_y_test/train.txt-     body_acc_y.txt
+        body_acc_z_test/train.txt-     body_acc_z.txt
+        body_gyro_x_test/train.txt-    body_gyro_x.txt
+        body_gyro_y_test/train.txt-    body_gyro_y.txt
+        body_gyro_z_test/train.txt-    body_gyro_z.txt
+        total_acc_x_test/train.txt-    total_acc_x.txt
+        total_acc_y_test/train.txt-     total_acc_y.txt
+        total_acc_z_test/train.txt-     total_acc_z.txt
+
+        subject_test/train.txt-     subject.txt
+        X_test/train.txt-     X.txt
+        y_test/train.txt-     y.txt
 
 STEP 2: Extracts only the measurements on the mean and standard deviation for each measurement
 Use grep to find index of matching variables with 'mean' and 'std' in the text.
@@ -54,6 +55,7 @@ using lapply transform the dataframe to the required format.
     tidy_data_set<- f1[, lapply(.SD,mean), by = key(f1)]
     
 Writing tidy data to file
+
     dir.create("Tidy_Data")
     fname<-"Tidy_Data/tidy_data.txt"
     write.table(tidy_data_set,fname,append = FALSE)
